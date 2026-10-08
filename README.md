@@ -20,6 +20,12 @@ $env:DB_PASSWORD = "<your MySQL password>"
 
 The API runs on port 8080 by default.
 
+## Deploy on Railway
+
+Deploy this repository as a service from its repository root. `railway.json` builds and runs the Spring Boot JAR, and the application listens on Railway's assigned `PORT`.
+
+Add a Railway MySQL database to the project. In the backend service, add references to that database service's `MYSQLHOST`, `MYSQLPORT`, `MYSQLDATABASE`, `MYSQLUSER`, and `MYSQLPASSWORD` variables. Then generate a public domain for the backend and set that HTTPS URL as `BACKEND_URL` in the frontend service. The frontend appends `/api` to this URL.
+
 ## Test
 
 ```powershell
